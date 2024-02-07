@@ -1,0 +1,15 @@
+D:\c#\ConsoleApp2\facade\bin\Debug\net6.0\facade.exe
+D:\c#\ConsoleApp2\facade\bin\Debug\net6.0\facade.deps.json
+D:\c#\ConsoleApp2\facade\bin\Debug\net6.0\facade.runtimeconfig.json
+D:\c#\ConsoleApp2\facade\bin\Debug\net6.0\facade.dll
+D:\c#\ConsoleApp2\facade\bin\Debug\net6.0\facade.pdb
+D:\c#\ConsoleApp2\facade\obj\Debug\net6.0\facade.csproj.AssemblyReference.cache
+D:\c#\ConsoleApp2\facade\obj\Debug\net6.0\facade.GeneratedMSBuildEditorConfig.editorconfig
+D:\c#\ConsoleApp2\facade\obj\Debug\net6.0\facade.AssemblyInfoInputs.cache
+D:\c#\ConsoleApp2\facade\obj\Debug\net6.0\facade.AssemblyInfo.cs
+D:\c#\ConsoleApp2\facade\obj\Debug\net6.0\facade.csproj.CoreCompileInputs.cache
+D:\c#\ConsoleApp2\facade\obj\Debug\net6.0\facade.dll
+D:\c#\ConsoleApp2\facade\obj\Debug\net6.0\refint\facade.dll
+D:\c#\ConsoleApp2\facade\obj\Debug\net6.0\facade.pdb
+D:\c#\ConsoleApp2\facade\obj\Debug\net6.0\facade.genruntimeconfig.cache
+D:\c#\ConsoleApp2\facade\obj\Debug\net6.0\ref\facade.dll
