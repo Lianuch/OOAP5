@@ -13,7 +13,10 @@ public enum QualificationLevel
 public interface IEmployee
 {
     double GetTotalSalary();
-    void SetQualification(QualificationLevel newQualification);
+/*    void SetQualification(QualificationLevel newQualification);
+*/    QualificationLevel Qualification { get; set; }
+
+    string Name { get; set; }
     void SetWorkHours(int hours);
 }
 
@@ -99,10 +102,19 @@ public class PayrollFacade
         employees.Add(contractor);
     }
 
-    public void SetEmployeeQualification(string name, QualificationLevel newQualification)
+    public void SetQualification(string name, QualificationLevel qualification)
     {
-        Console.WriteLine(name  + newQualification);
+        IEmployee employee = employees.FirstOrDefault(e => e.Name == name);
+        if (employee != null)
+        {
+            employee.Qualification = qualification;
+        }
+        else
+        {
+            Console.WriteLine($"Employee with name {name} not found.");
+        }
     }
+
 
     public List<IEmployee> GetTopPerformers()
     {
@@ -120,7 +132,10 @@ class Program
         payrollFacade.AddStaffEmployee("John Doe", QualificationLevel.Senior, 50000);
         payrollFacade.AddContractor("Jane Smith", QualificationLevel.Middle, 3000);
 
-        payrollFacade.SetEmployeeQualification("John Doe ", QualificationLevel.Senior);
+        payrollFacade.SetQualification("John Doe", QualificationLevel.Junior);
+        Console.WriteLine();
+
+
 
         var topPerformers = payrollFacade.GetTopPerformers();
         Console.WriteLine("Top performers:");
