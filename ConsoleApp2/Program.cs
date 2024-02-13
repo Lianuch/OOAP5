@@ -10,17 +10,23 @@ public enum QualificationLevel
 
 public interface IEmployee
 {
+     double BaseSalary { get;  }
     double GetTotalSalary();
+
     double GetBonus();
     void SetQualification(QualificationLevel newQaulification);
     void SetWorkHours(int hours);
+    QualificationLevel Qualification { get; set; }
+
+
 }
 
 public class Employee : IEmployee
 {
     public string Name { get; set; }
     public QualificationLevel Qualification { get; set; }
-    public virtual double BaseSalary { get; set; }
+
+    public double BaseSalary { get;  }
 
     public Employee(string name, QualificationLevel qualification, double baseSalary)
     {
@@ -46,24 +52,24 @@ public class Employee : IEmployee
     {
         int WorkHours = hours;
     }
+    public override string ToString()
+    {
+        return $"Bonus for {Name}: {BaseSalary}";
+
+    }
 
 }
 
-public abstract class EmployeeDecorator : IEmployee
+public abstract class EmployeeDecorator 
 {
-    protected IEmployee employee;
+    public IEmployee employee { get; set; }
 
-    public EmployeeDecorator(IEmployee employee)
-    {
-        this.employee = employee;
-    }
-
-    public abstract double GetBonus();
+ 
    
 
     public virtual double GetTotalSalary()
     {
-        var totalSalary = ((Employee)employee).BaseSalary + GetBonus();
+        var totalSalary = employee.BaseSalary + employee.GetBonus();
         return totalSalary;
     }
     public virtual void SetQualification(QualificationLevel qualification)
@@ -79,43 +85,44 @@ public abstract class EmployeeDecorator : IEmployee
 
 public class StaffEmployee : EmployeeDecorator
 {
-    public StaffEmployee(IEmployee employee) : base(employee)
+    public StaffEmployee(IEmployee employee) 
     {
+        this.employee = employee;
     }
 
-    public override double GetBonus()
+    public  double GetBonus()
     {
-        var baseSalary = ((Employee)employee).BaseSalary;
+        var baseSalary = employee.BaseSalary;
         return baseSalary * 0.2;
     }
 }
 public class Contractor : EmployeeDecorator
 {
-    public Contractor(IEmployee employee) : base(employee)
+    public Contractor(IEmployee employee) 
     {
-
+        this.employee = employee;
     }
-    public override double GetBonus()
+    public  double GetBonus()
     {
-        var baseSalary = ((Employee)employee).BaseSalary;
+        var baseSalary = employee.BaseSalary;
         return baseSalary * 0.1;
     }
 }
 public class EmployeeManager
 {
-    private List<Employee> employees;
+    private List<IEmployee> employees;
 
     public EmployeeManager()
     {
-        employees = new List<Employee>();
+        employees = new List<IEmployee>();
     }
 
-    public void AddEmployee(Employee employee)
+    public void AddEmployee(EmployeeDecorator employee)
     {
-        employees.Add(employee);
+        employees.Add(employee.employee);
     }
 
-    public List<Employee> GetTopPerformers()
+    public List<IEmployee> GetTopPerformers()
     {
         return employees.OrderByDescending(e => e.Qualification).Take(10).ToList();
     }
@@ -128,6 +135,23 @@ class Program
 {
     static void Main(string[] args)
     {
+        EmployeeManager manager = new EmployeeManager();
+        IEmployee employee = new Employee("John", QualificationLevel.Senior, 5000);
+        IEmployee employee2 = new Employee("Alah", QualificationLevel.Middle, 4000);
 
+        EmployeeDecorator contractorDecorator = new Contractor(employee);
+        EmployeeDecorator staffEmployeeDecorator = new StaffEmployee(employee2);
+
+        manager.AddEmployee(staffEmployeeDecorator);
+        manager.AddEmployee(contractorDecorator);
+
+        staffEmployeeDecorator.SetQualification(QualificationLevel.Junior);
+        List<IEmployee> topPerformers = manager.GetTopPerformers();
+
+        foreach (var item in topPerformers)
+        {
+            Console.WriteLine(item);
+        }
+       
     }
 }

@@ -1,0 +1,15 @@
+D:\c#\ConsoleApp2\ConsoleApp2\bin\Debug\net6.0\decorator.exe
+D:\c#\ConsoleApp2\ConsoleApp2\bin\Debug\net6.0\decorator.deps.json
+D:\c#\ConsoleApp2\ConsoleApp2\bin\Debug\net6.0\decorator.runtimeconfig.json
+D:\c#\ConsoleApp2\ConsoleApp2\bin\Debug\net6.0\decorator.dll
+D:\c#\ConsoleApp2\ConsoleApp2\bin\Debug\net6.0\decorator.pdb
+D:\c#\ConsoleApp2\ConsoleApp2\obj\Debug\net6.0\decorator.csproj.AssemblyReference.cache
+D:\c#\ConsoleApp2\ConsoleApp2\obj\Debug\net6.0\decorator.GeneratedMSBuildEditorConfig.editorconfig
+D:\c#\ConsoleApp2\ConsoleApp2\obj\Debug\net6.0\decorator.AssemblyInfoInputs.cache
+D:\c#\ConsoleApp2\ConsoleApp2\obj\Debug\net6.0\decorator.AssemblyInfo.cs
+D:\c#\ConsoleApp2\ConsoleApp2\obj\Debug\net6.0\decorator.csproj.CoreCompileInputs.cache
+D:\c#\ConsoleApp2\ConsoleApp2\obj\Debug\net6.0\decorator.dll
+D:\c#\ConsoleApp2\ConsoleApp2\obj\Debug\net6.0\refint\decorator.dll
+D:\c#\ConsoleApp2\ConsoleApp2\obj\Debug\net6.0\decorator.pdb
+D:\c#\ConsoleApp2\ConsoleApp2\obj\Debug\net6.0\decorator.genruntimeconfig.cache
+D:\c#\ConsoleApp2\ConsoleApp2\obj\Debug\net6.0\ref\decorator.dll
